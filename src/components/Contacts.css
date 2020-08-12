@@ -1,0 +1,20 @@
+.contact-btn {
+  padding: 0.5em 1em;
+  background-color: rgb(59, 52, 52);
+  color: aliceblue;
+  border-radius: 10px;
+  font-weight: 600;
+  border: 2px groove skyblue;
+  transition: 0.2s;
+}
+
+.contact-btn:hover {
+  background-color: skyblue;
+  color: rgb(0, 0, 0);
+}
+
+.img-contacts {
+  max-width: 150px;
+  border-radius: 10%;
+  box-shadow: 0 2px 6px #012f5591;
+}

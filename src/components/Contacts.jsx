@@ -1,5 +1,6 @@
 import React from 'react';
 import contacts from './../contacts.json';
+import './Contacts.css';
 
 class Contacts extends React.Component {
   constructor() {
@@ -43,7 +44,6 @@ class Contacts extends React.Component {
   };
 
   deleteEntry = (personId) => {
-    console.log(personId);
     const list = [...this.state.contactsLimit];
     const filteredList = list.filter((actor) => actor.id !== personId);
     this.setState({
@@ -55,10 +55,16 @@ class Contacts extends React.Component {
     return (
       <div>
         <h1>IronContacts</h1>
-        <button onClick={this.AddRandomContact}>Add Random Contact</button>
-        <button onClick={this.sortByName}>Sort by name</button>
-        <button onClick={this.sortByPopularity}>Sort by popularity</button>
-        <table>
+        <button className="contact-btn" onClick={this.AddRandomContact}>
+          Add Random Contact
+        </button>
+        <button className="contact-btn" onClick={this.sortByName}>
+          Sort by name
+        </button>
+        <button className="contact-btn" onClick={this.sortByPopularity}>
+          Sort by popularity
+        </button>
+        <table style={{ margin: '0 auto' }}>
           <thead>
             <tr>
               <th>Picture</th>
@@ -73,6 +79,7 @@ class Contacts extends React.Component {
                   <td>
                     {' '}
                     <img
+                      className="img-contacts"
                       src={person.pictureUrl}
                       alt="person profile"
                       style={{ maxWidth: '100px' }}
@@ -81,7 +88,10 @@ class Contacts extends React.Component {
                   <td>{person.name}</td>
                   <td>{person.popularity}</td>
                   <td>
-                    <button onClick={() => this.deleteEntry(person.id)}>
+                    <button
+                      className="contact-btn"
+                      onClick={() => this.deleteEntry(person.id)}
+                    >
                       Delete
                     </button>
                   </td>
