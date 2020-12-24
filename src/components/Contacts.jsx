@@ -32,8 +32,7 @@ class Contacts extends React.Component {
 
   AddRandomContact = () => {
     const list = [...this.state.contactsLimit];
-    const randomContact =
-      contacts[Math.floor(Math.random() * contacts.length - 1)];
+    const randomContact = contacts[Math.floor(Math.random() * contacts.length)];
     if (!list.includes(randomContact)) {
       list.unshift(randomContact);
     }
@@ -64,7 +63,7 @@ class Contacts extends React.Component {
         <button className="contact-btn" onClick={this.sortByPopularity}>
           Sort by popularity
         </button>
-        <table style={{ margin: '0 auto' }}>
+        <table className="contact-table" style={{ margin: '0 auto' }}>
           <thead>
             <tr>
               <th>Picture</th>
@@ -75,7 +74,7 @@ class Contacts extends React.Component {
           <tbody>
             {this.state.contactsLimit.map((person) => {
               return (
-                <tr key={person.id}>
+                <tr key={person.id} className="tr-table">
                   <td>
                     {' '}
                     <img

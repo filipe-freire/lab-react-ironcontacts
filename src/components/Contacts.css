@@ -8,6 +8,10 @@
   transition: 0.2s;
 }
 
+.contact-btn + .contact-btn {
+  margin-left: 1em;
+}
+
 .contact-btn:hover {
   background-color: skyblue;
   color: rgb(0, 0, 0);
@@ -17,4 +21,12 @@
   max-width: 150px;
   border-radius: 10%;
   box-shadow: 0 2px 6px #012f5591;
+}
+
+.contact-table {
+  margin: 0 auto;
+}
+
+.tr-table:nth-of-type(even) {
+  border: 10px solid black;
 }
